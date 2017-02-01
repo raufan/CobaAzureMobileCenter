@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.microsoft.azure.mobile.MobileCenter;
+import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.azure.mobile.crashes.Crashes;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        MobileCenter.start(getApplication(), "54032a93-2188-4b50-9c4b-ad2997f4c770",
+                Analytics.class, Crashes.class);
     }
 
     @Override
